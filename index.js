@@ -35,7 +35,7 @@ client.on("messageCreate", async (message) => {
         }
     } catch (error) {
         console.error('Error processing message:', error);
-        message.channel.send('An error occurred while processing your request.');
+        message.channel.send(`That username doesn't exist`);
     }
 });
 

@@ -67,7 +67,7 @@ async function returnPlayerData(discordUsername, playerData, uuid, message) {
                 if (cataLevel >= 569800000) {
                     await Cata50Role(message);
                 }
-                if (cataLevel >= 769800000) {
+                if (cataLevel >= 2569800000) {
                     await Cata60Role(message);
                 }
                 if (kuudraComps >= 3000) {

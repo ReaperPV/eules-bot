@@ -71,16 +71,16 @@ async function returnPlayerData(discordUsername, playerData, uuid, message) {
 
     if (cataLevel >= 569800000) {
         await Cata50Role(message);
-            }
+    }
     if (kuudraComps >= 3000) {
         await ThreeThousandCompsRole(message);
-            }
+    }
     if (kuudraComps >= 5000) {
         await FiveThousandCompsRole(message);
-            }
+    }
     if (kuudraComps >= 10000) {
         await TenThousandCompsRole(message);
-            }
+    }
 }
 
 async function getSelectedProfile(uuid) {

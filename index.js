@@ -17,6 +17,11 @@ client.login(process.env.DISCORD_TOKEN);
 const CHANNEL_ID = '1236050716733341818';
 const ROLE_NON = 'non';
 const ROLE_EVERYONE = 'Everyone';
+const ROLE_CATA_50 = 'cata 50';
+const ROLE_3K_INFERNAL_COMPS = '3k Infernal comps';
+const ROLE_5K_INFERNAL_COMPS = '5k infernal comps';
+const ROLE_10K_INFERNAL_COMPS = '10k Infernal comps';
+const ROLE_CATA_60 = 'cata 60';
 const HYPIXEL_API_KEY = '75fb1b6c-b8ba-4ba6-8fe2-2db0083c002f';
 
 client.on("messageCreate", async (message) => {
@@ -59,6 +64,21 @@ async function returnPlayerData(discordUsername, playerData, uuid, message) {
             const { cataLevel, kuudraComps } = getProfileStats(selectedProfile, uuid);
             if (cataLevel >= 85559640 || kuudraComps >= 500) {
                 await confirmReqs(message);
+                if (cataLevel >= 569800000) {
+                    await Cata50Role(message);
+                }
+                if (cataLevel >= 769800000) {
+                    await Cata60Role(message);
+                }
+                if (kuudraComps >= 3000) {
+                    await ThreeThousandCompsRole(message);
+                }
+                if (kuudraComps >= 5000) {
+                    await FiveThousandCompsRole(message);
+                }
+                if (kuudraComps >= 10000) {
+                await TenThousandCompsRole(message);
+                }
             } else {
                 message.channel.send(`You don't meet the requirements :(`);
             }
@@ -67,19 +87,6 @@ async function returnPlayerData(discordUsername, playerData, uuid, message) {
         }
     } else {
         handleNonMatchingData(discordUsername, message);
-    }
-
-    if (cataLevel >= 569800000) {
-        await Cata50Role(message);
-    }
-    if (kuudraComps >= 3000) {
-        await ThreeThousandCompsRole(message);
-    }
-    if (kuudraComps >= 5000) {
-        await FiveThousandCompsRole(message);
-    }
-    if (kuudraComps >= 10000) {
-        await TenThousandCompsRole(message);
     }
 }
 
@@ -113,27 +120,32 @@ function handleNonMatchingData(discordUsername, message) {
         message.channel.send(`That's not you...`);
     }
 }
-
 async function Cata50Role(message) {
-    message.channel.send('Applied Cata 50 Role')
+    message.channel.send('Added Cata 50 Role')
     const Cata50 = message.guild.roles.cache.find(role => role.name === ROLE_CATA_50)
     if (Cata50) await message.member.roles.add(Cata50)
 }
 
 async function ThreeThousandCompsRole(message) {
-    message.channel.send('Applied 3k comps Role')
+    message.channel.send('Added 3k comps Role')
     const ThreeThousandComps = message.guild.roles.cache.find(role => role.name === ROLE_3K_INFERNAL_COMPS)
     if (ThreeThousandComps) await message.member.roles.add(ThreeThousandComps)
 }
 
 async function FiveThousandCompsRole(message) {
-    message.channel.send('Applied 5k comps Role')
+    message.channel.send('Added 5k comps Role')
     const FiveThousandComps = message.guild.roles.cache.find(role => role.name === ROLE_5K_INFERNAL_COMPS)
     if (FiveThousandComps) await message.member.roles.add(FiveThousandComps)
 }
 
 async function TenThousandCompsRole(message) {
-    message.channel.send('Applied 10k comps Role')
+    message.channel.send('Added 10k comps Role')
     const TenThousandComps = message.guild.roles.cache.find(role => role.name === ROLE_10K_INFERNAL_COMPS)
     if (TenThousandComps) await message.member.roles.add(TenThousandComps)
+}
+
+async function Cata60Role(message){
+    message.channel.send('Added Cata 60 Role')
+    const Cata60 = message.guild.roles.cache.find(role => role.name === ROLE_CATA_60)
+    if (Cata60) await message.member.roles.add(Cata60)
 }

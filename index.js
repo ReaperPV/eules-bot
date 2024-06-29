@@ -68,17 +68,18 @@ async function returnPlayerData(discordUsername, playerData, uuid, message) {
     } else {
         handleNonMatchingData(discordUsername, message);
     }
-            if (cataLevel >= 569800000) {
-                await Cata50Role(message);
+
+    if (cataLevel >= 569800000) {
+        await Cata50Role(message);
             }
-            if (kuudraComps >= 3000) {
-                await ThreeThousandCompsRole(message);
+    if (kuudraComps >= 3000) {
+        await ThreeThousandCompsRole(message);
             }
-            if (kuudraComps >= 5000) {
-                await FiveThousandCompsRole(message);
+    if (kuudraComps >= 5000) {
+        await FiveThousandCompsRole(message);
             }
-            if (kuudraComps >= 10000) {
-                await TenThousandCompsRole(message);
+    if (kuudraComps >= 10000) {
+        await TenThousandCompsRole(message);
             }
 }
 
@@ -112,6 +113,7 @@ function handleNonMatchingData(discordUsername, message) {
         message.channel.send(`That's not you...`);
     }
 }
+
 async function Cata50Role(message) {
     message.channel.send('Applied Cata 50 Role')
     const Cata50 = message.guild.roles.cache.find(role => role.name === ROLE_CATA_50)

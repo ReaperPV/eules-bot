@@ -22,7 +22,7 @@ const ROLE_3K_INFERNAL_COMPS = '3k Infernal comps';
 const ROLE_5K_INFERNAL_COMPS = '5k infernal comps';
 const ROLE_10K_INFERNAL_COMPS = '10k Infernal comps';
 const ROLE_CATA_60 = 'cata 60';
-const HYPIXEL_API_KEY = process.env.DISCORD_TOKEN;
+const HYPIXEL_API_KEY = process.env.HYPIXEL_API_KEY;
 
 client.on("messageCreate", async (message) => {
     if (message.author.bot) return;

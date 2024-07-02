@@ -117,7 +117,7 @@ function handleNonMatchingData(discordUsername, message) {
     } else if (discordUsername === 'Not a real ign') {
         message.channel.send(`That username doesn't exist`);
     } else {
-        message.channel.send(`That's not you...`);
+        message.channel.send(`That account is not linked to your discord https://cdn.discordapp.com/attachments/922202066653417512/1066476136953036800/tutorial.gif?ex=6685200d&is=6683ce8d&hm=c02eb147941c2f1a5ee33cb034c861a27178093c1e479e2e68478c9a6ae3bd5c&`);
     }
 }
 async function Cata50Role(message) {
